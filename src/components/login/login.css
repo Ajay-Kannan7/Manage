@@ -1,0 +1,49 @@
+.login{
+    text-align:center;
+}
+.login h1{
+    text-align:center;
+    font-size:45px;
+    margin-top:3%;
+}
+.login .main-logo{
+    font-size:75px;
+}
+.login .login-page{
+    width:50%;
+    margin: 3% auto;
+    padding:2%;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    border:3px solid darkgreen;
+    border-radius:20px;
+}
+
+.login .login-page input{
+    width:80%;
+    padding:1%;
+    margin-top:2%;
+    border:3px solid black;
+}
+
+.login .login-page button{
+    font-size:25px;
+    border:2px solid black;
+    margin-top:2%;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:1000px){
+    .login .login-page{
+        width:100%;
+    }
+    .login .main-logo{
+        font-size:60px;
+        margin-top:20%;
+        margin-bottom:13%;
+    }
+}
