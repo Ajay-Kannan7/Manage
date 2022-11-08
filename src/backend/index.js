@@ -3,6 +3,7 @@ let cors=require('cors');
 let mongoose=require('mongoose');
 let app=express();
 let userModel=require("./model/user-schema")
+let taskModel=require("./model/task-schema")
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
@@ -29,7 +30,8 @@ app.post("/register",(req,res)=>{
             let userReg=new userModel({
                 name,
                 email,
-                password
+                password,
+                tasks:[]
             })
             userReg.save()
             .then(()=>{
@@ -60,8 +62,44 @@ app.post("/login",(req,res)=>{
     })
 })
 
-app.get("/",(req,res)=>{
-    res.send("Hey there!")
+app.post("/add-task",(req,res)=>{
+    let name=req.body.userName;
+    let task=req.body.formValues.task;
+    if(task===""){
+        res.send({message:"Task field can't be empty"})
+        return;
+    }
+    let newTask=new taskModel({
+        name,
+        task
+    })
+    newTask.save()
+    .then(()=>res.send({message:"Task added successfully!"}))
+    .catch(err=>console.log(err))
+})
+
+app.post("/delete-task",(req,res)=>{
+    let content=req.body.content
+    taskModel.findOneAndDelete({task:content},(err,user)=>{
+        if(user){
+            res.send({message:"Task completed!"})
+        }
+        else{
+            console.log(err)
+        }
+    })
+})
+
+app.post("/",(req,res)=>{
+    let userName=req.body.userName;
+    taskModel.find({name:userName},(err,user)=>{
+        if(user){
+            res.send({allData:user})
+        }
+        else{
+            console.log(err)
+        }
+    })
 })
 
 app.listen(process.env.PORT||PORT)

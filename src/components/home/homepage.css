@@ -1,0 +1,63 @@
+.main-wrapper-homepage .user-banner{
+    width:95%;
+    margin:1% auto;
+    font-size:15px;
+}
+.main-wrapper-homepage .user-banner h1{
+    margin-bottom:1%;
+}
+
+.main-wrapper-homepage .tasks-banner{
+    padding:3%;
+    text-align:center;
+    border:5px solid darkgreen;
+    border-radius:20px;
+    margin-top:3%;
+}
+
+.main-wrapper-homepage .tasks-banner .task-header{
+    font-size:40px;
+}
+
+.main-wrapper-homepage .tasks-banner .task-wrapper{
+    border:solid 5px darkgreen;
+    border-radius:15px;
+    margin:2% 0;
+    padding:2%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.main-wrapper-homepage .tasks-banner .task-wrapper .task-main-wrapper{
+    width:50%;
+    overflow:auto;
+    height:7vh;
+}
+
+.main-wrapper-homepage .tasks-banner .task-wrapper button{
+    width:10%;
+    font-size:18px;
+    padding:1%;
+    border:3px solid darkgreen;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:1000px){
+    .main-wrapper-homepage .tasks-banner .task-wrapper{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        align-items:center;
+        font-size:20px;
+        margin:9% 0;
+    }
+    .main-wrapper-homepage .tasks-banner .task-wrapper button{
+        width:45%;
+        padding:3%;
+        margin-top:7%;
+    }
+    .main-wrapper-homepage .tasks-banner .task-wrapper .task-main-wrapper{
+        width:90%;
+    }
+}

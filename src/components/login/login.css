@@ -27,14 +27,22 @@
     width:80%;
     padding:1%;
     margin-top:2%;
-    border:3px solid black;
+    border:3px solid darkgreen;
+    border-radius:10px;
 }
 
 .login .login-page button{
+    width:15%;
+    padding:1%;
     font-size:25px;
-    border:2px solid black;
+    border:2px solid darkgreen;
     margin-top:2%;
     cursor:pointer;
+    border-radius: 10px;
+}
+
+::placeholder{
+    text-align:center;
 }
 
 @media only screen and (max-width:1000px){
@@ -45,5 +53,10 @@
         font-size:60px;
         margin-top:20%;
         margin-bottom:13%;
+    }
+    .login .login-page button{
+        width:30%;
+        padding:2%;
+        border-radius: 10px;
     }
 }

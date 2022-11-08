@@ -3,6 +3,12 @@ let initialState={
 }
 
 let ManageReducer=(state=initialState,action)=>{
+    if(action.type==="LOADDATA"){
+        return{
+            ...state,
+            allData:action.payload
+        }
+    }
     return{
         ...state
     }

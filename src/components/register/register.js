@@ -22,7 +22,7 @@ function RegisterPage(){
     let register=()=>{
         let {name,email,password,repassword}=formValues;
         if(name && email && password && (password===repassword)){
-            axios.post("http://localhost:9000/register",formValues)
+            axios.post("https://manage-backend.onrender.com/register",formValues)
             .then(res=>{
                 alert(res.data.message);
                 navigate("/login");
@@ -38,7 +38,7 @@ function RegisterPage(){
             <h1 className="main-logo">Manage</h1>
             <h1>Register</h1>
             <div className="register-page">
-                <label>Enter your name:</label><input name="name" onChange={handleChange} value={formValues.name} type="text" placeholder="Your username"></input>
+                <label>Enter your first name:</label><input name="name" onChange={handleChange} value={formValues.name} type="text" placeholder="Your username"></input>
                 <label>Enter your e-mail:</label><input value={formValues.email} name="email" onChange={handleChange} type="email" placeholder="Your email"></input>
                 <label>Enter your password:</label><input value={formValues.password} name="password" onChange={handleChange} type="password" placeholder="Your password"></input>
                 <label>Re-enter your password:</label><input value={formValues.repassword} name="repassword" onChange={handleChange} type="password" placeholder="Re-enter password"></input>
