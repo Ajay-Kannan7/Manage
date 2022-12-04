@@ -13,7 +13,7 @@ function App() {
   let state=useSelector(state=>{return{...state}})
   let dispatch=useDispatch();
     
-  axios.post("https://manage-backend.onrender.com/",{userName})
+  axios.post("https://manage-backend-production.up.railway.app/",{userName})
   .then(res=>{
     dispatch({
       type:"LOADDATA",
