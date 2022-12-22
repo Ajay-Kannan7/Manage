@@ -17,7 +17,7 @@ For the backend or the server side, I've utilized express.js,mongoose,mongodb
 
 Front-end: Netlify
 
-Back-end: Railway hosting service
+Back-end: Render
 
 ## Live URL
 https://manage-event.netlify.app/
