@@ -22,7 +22,7 @@ function RegisterPage(){
     let register=()=>{
         let {name,email,password,repassword}=formValues;
         if(name && email && password && (password===repassword)){
-            axios.post("https://manage-backend-production.up.railway.app/register",formValues)
+            axios.post("https://manage-backend.onrender.com/register",formValues)
             .then(res=>{
                 alert(res.data.message);
                 navigate("/login");
