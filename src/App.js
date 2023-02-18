@@ -4,6 +4,7 @@ import RegisterPage from "./components/register/register";
 import LoginPage from "./components/login/login";
 import AddTask from "./components/add-task/addTask";
 import HomePage from "./components/home/homepage";
+import TaskDone from "./components/tasks-done/task-done";
 import axios from "axios";
 import "./App.css"
 function App() {
@@ -22,6 +23,14 @@ function App() {
   })
   .catch(err=>console.log(err))
 
+  axios.post("https://manage-backend.onrender.com/task-done",{userName})
+  .then(res=>{
+      dispatch({
+          type:"DONETASK",
+          payload:res.data.done
+      })
+  })
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -30,6 +39,7 @@ function App() {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
         <Route path="/add-task" element={<AddTask />}></Route>
+        <Route path="/tasks-done" element={<TaskDone data={state.doneData}/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

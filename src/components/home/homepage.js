@@ -6,6 +6,7 @@ import "./homepage.css"
 import axios from "axios";
 function HomePage(props){
 
+  
   //navbar code
   let [iconValue,handleIcon]=useState({
     initialValue:faBars
@@ -39,7 +40,7 @@ function HomePage(props){
 
   let handleDone=(event)=>{
     let content=event.target.parentElement.children[0].textContent;
-    axios.post("https://manage-backend.onrender.com/delete-task",{content})
+    axios.post("https://manage-backend.onrender.com/delete-task",{content,userName})
     .then(res=>{
       if(res){
         alert(res.data.message)
@@ -56,6 +57,7 @@ function HomePage(props){
             <nav>
             <NavLink className="navLinks" to="/">Home</NavLink>
             <NavLink className="navLinks" to="/add-task">Add-Task</NavLink>
+            <NavLink className="navLinks" to="/tasks-done">Tasks-Done</NavLink>
             <NavLink className="navLinks" onClick={()=>{
                 localStorage.removeItem("isLogged");
                 window.location.reload()

@@ -1,0 +1,25 @@
+.main-done-wrapper{
+    width:100%;
+    text-align:center;
+    padding:2%;
+}
+
+.main-done-wrapper h1{
+    font-size:43px
+}
+
+.main-done-wrapper .done-task-wrapper .done-task div{
+    border:5px solid darkgreen;
+    font-size:20px;
+    border-radius:20px;
+    padding:3%;
+    margin:3% 3%;
+}
+
+.main-done-wrapper .homepage-link{
+    font-size:25px;
+    font-weight:bolder;
+    text-decoration:underline;
+    color:black;
+    display:inline-block;
+}
