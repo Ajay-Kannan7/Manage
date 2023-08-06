@@ -7,6 +7,7 @@ import HomePage from "./components/home/homepage";
 import TaskDone from "./components/tasks-done/task-done";
 import axios from "axios";
 import "./App.css"
+import { useEffect } from "react";
 function App() {
   let isLoggedIn=localStorage.getItem("isLogged");
   let userName=localStorage.getItem("user")
@@ -14,22 +15,24 @@ function App() {
   let state=useSelector(state=>{return{...state}})
   let dispatch=useDispatch();
     
-  axios.post("https://manage-backend.onrender.com/",{userName})
-  .then(res=>{
-    dispatch({
-      type:"LOADDATA",
-      payload:res.data.allData
-    })
-  })
-  .catch(err=>console.log(err))
-
-  axios.post("https://manage-backend.onrender.com/task-done",{userName})
-  .then(res=>{
-      dispatch({
-          type:"DONETASK",
-          payload:res.data.done
+  useEffect(()=>{
+      axios.post("https://manage-backend.onrender.com/",{userName})
+      .then(res=>{
+        dispatch({
+          type:"LOADDATA",
+          payload:res.data.allData
+        })
       })
-  })
+      .catch(err=>console.log(err))
+
+      axios.post("https://manage-backend.onrender.com/task-done",{userName})
+      .then(res=>{
+          dispatch({
+              type:"DONETASK",
+              payload:res.data.done
+          })
+      })
+  },[]);
 
   return (
     <div className="App">

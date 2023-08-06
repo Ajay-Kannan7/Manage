@@ -3,10 +3,38 @@
     margin:1% auto;
     font-size:15px;
 }
+#dialog{
+    width:50%;
+    margin:10% auto;
+    background-color:lightgreen;
+    padding:5%;
+}
+#dialog .update-task{
+    width:60%;
+    margin:4% 0;
+    padding:2%;
+}
+#dialog .close-dialog{
+    width:30%;
+    font-size:18px;
+    padding:1%;
+    border:3px solid darkgreen;
+    border-radius:10px;
+    cursor:pointer;
+}
+#dialog::backdrop{
+    background-color:hsla(178, 100%, 88%, 0.80)
+}
 .main-wrapper-homepage .user-banner h1{
     margin-bottom:1%;
 }
-
+.main-wrapper-homepage .user-banner .search-tasks{
+    width:50%;
+    padding:1%;
+    font-size:15px;
+    border-style:none;
+    border-radius:20px;
+}
 .main-wrapper-homepage .tasks-banner{
     padding:3%;
     text-align:center;
@@ -59,5 +87,18 @@
     }
     .main-wrapper-homepage .tasks-banner .task-wrapper .task-main-wrapper{
         width:90%;
+    }
+    .main-wrapper-homepage .user-banner .search-tasks{
+        width:80%;
+        padding:4%;
+        margin:5% 0;
+    }
+    #dialog{
+        width:95%;
+        margin:55% auto;
+    }
+    #dialog .update-task{
+        width:90%;
+        padding:5%;
     }
 }

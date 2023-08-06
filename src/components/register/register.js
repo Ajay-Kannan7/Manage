@@ -10,7 +10,6 @@ function RegisterPage(){
         email:"",
         password:"",
         repassword:""
-
     })
     let handleChange=(event)=>{
         let {name,value}=event.target;

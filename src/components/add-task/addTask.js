@@ -25,6 +25,7 @@ function AddTask(){
             if(res.data.message==="Task added successfully!"){
                 alert(res.data.message);
                 navigate("/")
+                window.location.reload();
             }
             
             else if(res.data.message="Task field can't be empty"){
